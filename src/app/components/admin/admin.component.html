@@ -1,0 +1,25 @@
+<mat-action-list>
+    <!-- <ng-container *ngFor="let hero of heroes | async">
+      <button mat-list-item (click)="removeHero(hero.key)">
+          {{ hero.payload | json }}
+      </button>
+  </ng-container> -->
+    <ng-container *ngFor="let hero of heroes | async">
+        <button mat-list-item (click)="removeHero(hero.id)">
+            {{ hero.name }}
+        </button>
+    </ng-container>
+    <!-- <button mat-list-item *ngFor="let hero of heroes | async">
+      {{ hero.name }}
+  </button> -->
+</mat-action-list>
+
+<!-- <button mat-raised-button color="primary" (click)="addAquaman()">Add Aquaman</button> -->
+
+<form [formGroup]="heroForm">
+    <mat-form-field>
+        <input matInput formControlName="name" placeholder="Hero Name">
+    </mat-form-field>
+    <br>
+    <button mat-stroked-button color="primary" (click)="addHero()">Add Hero</button>
+</form>
