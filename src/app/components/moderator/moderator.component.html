@@ -2,11 +2,11 @@
     <mat-list>
         <ng-container *ngFor="let hero of heroes | async; let i = index">
             <mat-list-item>
-                <p *ngIf="!heroFoci[hero.id]" (focus)="onFocus(hero.id)" tabindex={{i}}>
+                <p *ngIf="!heroFoci[hero.id]" (focus)="onFocus(hero.id)" tabindex="{{i + 1}}">
                     {{ hero.name }}
                 </p>
                 <mat-form-field *ngIf="heroFoci[hero.id]" >
-                    <input matInput #nameInput formControlName="name" tabindex={{i}}
+                    <input matInput #nameInput formControlName="name" tabindex="{{i + 1}}"
                     (blur)="onBlur(hero.id)">
                 </mat-form-field>
 
