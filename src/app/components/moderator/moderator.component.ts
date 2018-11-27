@@ -74,7 +74,7 @@ export class ModeratorComponent implements OnInit {
     this.heroFoci[id] = false;
   }
 
-  updateHero(event) {
+  updateHero() {
     let id;
     Object.keys(this.heroFoci).map(key => {
       if (this.heroFoci[key]) {
