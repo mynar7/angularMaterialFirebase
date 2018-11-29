@@ -1,2 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'app-theme.scss';
+
+.docs-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.docs-header>p {
+    margin: 0;
+}
+
+.center-split {
+    justify-content: space-around;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    width: 100%;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.end {
+    justify-content: flex-end;
+}
+
+.success-check {
+    color: green;
+    font-size: 2em;
+    margin: 0 40px;
+}

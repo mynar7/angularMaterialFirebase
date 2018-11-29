@@ -13,13 +13,17 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { ModeratorComponent } from './components/moderator/moderator.component';
+import { DocumentUploadComponent } from './components/document-upload/document-upload.component';
+import { DocumentValidateComponent } from './components/document-validate/document-validate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     HomeComponent,
-    ModeratorComponent
+    ModeratorComponent,
+    DocumentUploadComponent,
+    DocumentValidateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,59 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h3>
+        Customer Documents&nbsp;
+        <mat-icon>folder_shared</mat-icon>
+      </h3>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <br><br>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item class="percents">
+        <div class="docs-header center-split">
+          <div class="col center">
+            <mat-progress-spinner color="accent" mode="determinate" value="{{DocLength / MaxDocs * 100}}">
+            </mat-progress-spinner>
+            <span class="spinner-percentage">{{DocLength / MaxDocs * 100}}%</span>
+            <h2 mat-line>Uploaded Documents</h2>
+          </div>
+          <div class="col center">
+            <mat-progress-spinner color="accent" mode="determinate" value="{{Verified / MaxDocs * 100}}">
+            </mat-progress-spinner>
+            <span class="spinner-percentage">{{Verified / MaxDocs * 100}}%</span>
+            <h2 mat-line>Verified Documents</h2>
+          </div>
+        </div>
+      </mat-list-item>
+      <br><br><br>
+      <mat-list-item class="documents">
+        <div class="docs-header">
+          <p mat-subheader>Documents</p>
+          <p mat-subheader>Verified</p>
+        </div>
+      </mat-list-item>
+      <ng-container *ngFor="let doc of Docs | async; let i = index">
+        <mat-list-item>
+          <mat-icon mat-list-icon>insert_drive_file</mat-icon>
+          <!-- add document plus index -->
+          <h3 mat-line>Document {{i + 1}}</h3>
+          <!-- capture current date/time -->
+          <h6 mat-line>{{doc.date | date:'medium'}}</h6>
+          <!-- add checkmark once doc is approved -->
+          <mat-icon *ngIf="doc.verified" class="success-check">check</mat-icon>
+        </mat-list-item>
+        <mat-list-item>
+          <div class="end row">
+            <button *ngIf="!doc.verified" mat-button (click)="accept(doc.id)">Accept</button>
+            <button *ngIf="doc.verified" mat-button (click)="accept(doc.id)">Reject</button>
+            <button mat-button color="warn" (click)="delete(doc.id)">Remove</button>
+          </div>
+        </mat-list-item>
+        <mat-divider *ngIf="i < DocLength - 1"></mat-divider>
+        <br>
+      </ng-container>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
