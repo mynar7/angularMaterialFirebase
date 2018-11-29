@@ -14,7 +14,7 @@
       <mat-list-item>
         <div class="docs-header">
           <p *ngIf="MaxDocs === DocLength">Documents Uploaded.</p>
-          <p *ngIf="MaxDocs !== DocLength" >Please upload {{MaxDocs - DocLength}} documents</p>
+          <p *ngIf="MaxDocs !== DocLength" >Please upload {{MaxDocs - DocLength}} document{{MaxDocs - DocLength > 1 ? 's' : ''}}</p>
           <p>Verified: {{Verified / MaxDocs * 100}}%</p>
         </div>
       </mat-list-item>
