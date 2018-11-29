@@ -391,6 +391,18 @@ MIT
 
 firebase/firestore
 
+@angular/material/icon
+
+@angular/material/card
+
+@angular/material/divider
+
+@angular/material/progress-bar
+
+@angular/material/progress-spinner
+
+@angular/material/toolbar
+
 zone.js
 MIT
 The MIT License
